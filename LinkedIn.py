@@ -27,9 +27,9 @@ def linkedin():
     driver = webdriver.Chrome("E:/project/Uploader_Downloader/chromedriver")
     login = driver.get("https://www.linkedin.com/uas/login?fromSignIn=true&trk=cold_join_sign_in")
     time.sleep(1)
-    user_id = driver.find_element_by_id("username").send_keys("akshaydileep@karunya.edu.in")
+    user_id = driver.find_element_by_id("username").send_keys("Enter your email id here")
     time.sleep(1)
-    password = driver.find_element_by_id("password").send_keys("anagha18")
+    password = driver.find_element_by_id("password").send_keys("Enter LinkedIn password here")
     time.sleep(3)
     driver.find_element_by_xpath('//*[@id="app__container"]/main/div[2]/form/div[3]/button').click()   
     if driver.title == "Security Verification | LinkedIn":
@@ -143,14 +143,14 @@ def linkedin():
                 except:
                     if page == page_no - 1:
                         sheet = pd.DataFrame([full_name,first_name,last_name,working,profile_page,position,years_of_experience,years_of_experience_at_that_pos,institute,qualification,time_of_qualification])
-                        sheet.to_csv('FINAL Sheet.csv')
+                        sheet.to_csv('TEST_SHEETt.csv')
                         print("Excel sheet is ready...")
                         sys.exit()
                     else:
                         print("File is open please close the file")
                         input("Done? ")
                         sheet = pd.DataFrame([full_name,first_name,last_name,working,profile_page,position,years_of_experience,years_of_experience_at_that_pos,institute,qualification,time_of_qualification])
-                        sheet.to_csv('FINAL Sheet.csv')
+                        sheet.to_csv('TEST_SHEET.csv')
                         print("Excel sheet is ready...")
                         sys.exit()
 linkedin()
